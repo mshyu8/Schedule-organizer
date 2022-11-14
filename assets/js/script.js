@@ -11,3 +11,16 @@ for (let index = 9; index <= 17; index++) {
     }
 };
 
+for (let index = 9; index <= 17; index++) {
+    $(`#btn-${index}`).on('click', function() {
+        localStorage.setItem(`text-${index}`, $(`#text-${index}`).val());
+    })
+};
+
+function displayStorage() {
+    for (let index = 9; index <= 17; index++) {
+        $(`#text-${index}`).val(localStorage.getItem(`text-${index}`))
+    }
+};
+
+displayStorage();
